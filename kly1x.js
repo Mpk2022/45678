@@ -10,20 +10,20 @@ const $ = new Env('科勒优选');
 let status;
 status = (status = ($.getval("klyxstatus") || "1")) > 1 ? `${status}` : ""; // 账号扩展字符
 let klyxtkArr = [], klyxcount = ''
-let klyxtk = ($.isNode() ? process.env.klyxtk : $.getdata('klyxtk1')) || '';
+let klyxtk1 = ($.isNode() ? process.env.klyxtk : $.getdata('klyxtk1')) || '';
 let taskCode = '',taskName='',flightStoneNum = ''
 let cookie = ''
 
 
 !(async () => {
     if (typeof $request !== "undefined") {
-        await klyxtk()
+        await klyxtk1()
 
     } else {
-        klyxtkArr = klyxtk.split('@')
+        klyxtkArr = klyxtk1.split('@')
         console.log(`------------- 共${klyxtkArr.length}个账号-------------\n`)
         for (let i = 0; i < klyxtkArr.length; i++) {
-            klyxtk = klyxtkArr[i]
+            klyxtk1 = klyxtkArr[i]
             
 
             $.index = i + 1;
